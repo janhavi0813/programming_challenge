@@ -1,0 +1,19 @@
+#include<iostream>
+int main()
+{
+	int arr[10]={44,29,56,88,33,67,8,99,12,40};
+	printf("your array is:\t");
+	for(int i=0;i<10;i++)
+	{
+		printf("%d\t",arr[i]);
+	}
+	int max=arr[0];
+	for(int i=0;i<10;i++)
+	{
+		if(max<arr[i])
+		{
+			max=arr[i];
+		}
+	}
+	printf("\nmaximum element is %d",max);
+}
