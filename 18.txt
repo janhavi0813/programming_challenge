@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+int nthRoot(int N, int M) {
+    double root = pow(M, 1.0 / N);
+
+    if (std::abs(std::round(root) - root) < 1e-9) {
+        return static_cast<int>(root);
+    } else {
+        return -1;
+    }
+}
+
+int main() {
+    int N, M;
+    std::cout << "Enter N and M: ";
+    std::cin >> N >> M;
+
+    int result = nthRoot(N, M);
+
+    if (result != -1) {
+        std::cout << "The " << N << "th root of " << M << " is: " << result << std::endl;
+    } else {
+        std::cout << "The " << N << "th root of " << M << " is not an integer." << std::endl;
+    }
+
+    return 0;
+}
