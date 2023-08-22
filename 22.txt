@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+void test(string expression, int index){
+	int i;
+	if(expression[index]!='['){
+		cout << expression << ", " <<
+					index << ": -1\n";
+		return;
+	}
+	stack <int> st;
+	for(i = index; i < expression.length(); i++){
+		if(expression[i] == '[')
+		st.push(expression[i]);
+		else if(expression[i] == ']'){
+			st.pop();
+			if(st.empty()){
+				cout << expression << ", " <<
+					index << ": " << i << "\n";
+				return;
+			}
+		}
+	}
+	cout << expression << ", " <<
+				index << ": -1\n";
+}
+int main() {
+	test("[ABC[23]][89]", 0);
+	return 0;
+}
